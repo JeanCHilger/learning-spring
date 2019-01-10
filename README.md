@@ -1,5 +1,7 @@
 # learning-spring
-A repository made with the intention to learn some functionalities of the Spring Framework with a little bit of Angular. The files are not ordered by complexity. To see more details about an specific project click on the link.
+A repository made with the intention to learn some functionalities of the **Spring Framework** with a little bit of **Angular**. The files are not ordered by complexity. To see more details about an specific project click on the link. 
+
+The list of "resources" or "features" used showa what is described and explained (in a introductory manner) inside the code, in form of comments. To see more complex information about them or about the concepts involved please see the [Spring documentation](https://spring.io/docs). You also may find very useful tutorials in [Spring guides](http://spring.io/guides).
 
 1. [hello-world](https://github.com/JeanCHilger/learning-spring/tree/master/hello-world):
     * Simple spring boot starter project created with **spring initializr** to manage simple **GET requests**.
@@ -13,3 +15,5 @@ A repository made with the intention to learn some functionalities of the Spring
    * Project to control an inventory implementing a simple **CRUD with MySQL** and a front-end with **Angular**.
    * Uses an **phpMyAdmin MySQL database** and the Spring Data JPA's **CrudRepository**.
    * Uses the **Spring Web** module to provide URL for CRUD the data.
+
+Feel free to contribute with more material about Spring.
