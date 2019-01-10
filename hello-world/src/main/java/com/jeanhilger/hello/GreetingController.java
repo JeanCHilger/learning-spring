@@ -1,7 +1,9 @@
 package com.jeanhilger.hello;
 
 import java.util.concurrent.atomic.AtomicLong;
+
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -35,6 +37,11 @@ public class GreetingController {
 					 @RequestParam(value="genre") String genre) {
 		return new User(usrCounter.incrementAndGet(), name, age, genre);
 		
+	}
+		
+	@GetMapping(path="/hello-world/{name}")
+	public Greeting userByURL(@RequestParam(value="name") String name) {
+		return new Greeting(greetingCounter.incrementAndGet(), String.format(template, name));
 	}
 
 }
