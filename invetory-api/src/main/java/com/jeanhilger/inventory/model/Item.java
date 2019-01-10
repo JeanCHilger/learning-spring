@@ -6,16 +6,16 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class User {
+public class Item {
 	
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
+	// This id is like the item bar code.
 	private Long id;
 	
-	private String firstName;
-	private String lastName;
-	private int age;
-	private String email;
+	private String description;
+	private String provider;
+	private double value;
+	private int quantity;
 	
 	public Long getId() {
 		return this.id;
@@ -25,36 +25,36 @@ public class User {
 		this.id = id;
 	}
 	
-	public String getFirstName() {
-		return this.firstName;
+	public String getDescription() {
+		return this.description;
 	}
 	
-	public void setFirstName(String firstName) {
-		this.firstName = firstName;
+	public void setDescription(String description) {
+		this.description = description;
 	}
 	
-	public String getLastName() {
-		return this.lastName;
+	public String getProvider() {
+		return this.provider;
 	}
 	
-	public void setLastName(String lastName) {
-		this.lastName = lastName;
+	public void setProvider(String provider) {
+		this.provider = provider;
 	}
 	
-	public int getAge() {
-		return this.age;
+	public double getValue() {
+		return this.value;
 	}
 	
-	public void setAge(int age) {
-		this.age = age;
+	public void setValue(double value) {
+		this.value = value;
 	}
 	
-	public String getEmail() {
-		return this.email;
+	public int getQuantity() {
+		return this.quantity;
 	}
 	
-	public void setEmail(String email) {
-		this.email = email;
+	public void setQuantity(int quantity) {
+		this.quantity = quantity;
 	}
 	
 

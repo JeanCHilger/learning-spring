@@ -2,8 +2,9 @@ package com.jeanhilger.inventory.repository;
 
 import org.springframework.data.repository.CrudRepository;
 
-import com.jeanhilger.inventory.model.User;
+import com.jeanhilger.inventory.model.Item;
 
-public interface UserRepository extends CrudRepository<User, Long> {
+//This will be AUTO IMPLEMENTED by Spring into a Bean called userRepository
+public interface ItemRepository extends CrudRepository<Item, Long> {
 	
 }
