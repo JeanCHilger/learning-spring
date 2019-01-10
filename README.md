@@ -11,5 +11,5 @@ A repository made with the intention to learn some functionalities of the Spring
    
 1. [inventory-api](https://github.com/JeanCHilger/learning-spring/tree/master/invetory-api):
    * Project to control an inventory implementing a simple **CRUD with MySQL** and a front-end with **Angular**.
-   * Uses an **phpMyAdmin MySQL database**.
-   * Uses Spring Data JPA's **CrudRepository**.
+   * Uses an **phpMyAdmin MySQL database** and the Spring Data JPA's **CrudRepository**.
+   * Uses the **Spring Web** module to provide URL for CRUD the data.
