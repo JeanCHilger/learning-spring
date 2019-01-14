@@ -12,8 +12,12 @@ The list of "resources" or "features" used showa what is described and explained
    * Uses **CrudRepository** interface and explores the **save** and **find** features of it.
    
 1. [inventory-api](https://github.com/JeanCHilger/learning-spring/tree/master/invetory-api):
-   * Project to control an inventory implementing a simple **CRUD with MySQL** and a front-end with **Angular**.
+   * Project to control an inventory implementing a simple **CRUD with MySQL**.
    * Uses an **phpMyAdmin MySQL database** and the Spring Data JPA's **CrudRepository**.
    * Uses the **Spring Web** module to provide URL for CRUD the data.
+   
+1. [rest-service](https://github.com/JeanCHilger/learning-spring/tree/master/rest-service):
+   * A RESTful payroll management system using some of Spring features that help with the REST stuff.
+   * Uses the **Spring Web**, **Spring Data JPA**, **Spring HATEOAS** and the **Lombok** modules.
 
 Feel free to contribute with more material about Spring.
