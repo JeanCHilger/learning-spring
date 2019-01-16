@@ -19,15 +19,14 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.jeanhilger.restservice.EmployeeNotFoundException;
-import com.jeanhilger.restservice.EmployeeResourceAssembler;
+import com.jeanhilger.restservice.assembler.EmployeeResourceAssembler;
+import com.jeanhilger.restservice.exception.EmployeeNotFoundException;
 import com.jeanhilger.restservice.model.Employee;
 import com.jeanhilger.restservice.repository.EmployeeRepository;
 
 @RestController // This annotation indicates that every data returned by the methods will
 				// be written to the response body instead of a view. Similar to use @ResponseBoby
 				// in a method.
-
 public class EmployeeController {
 	
 	private final EmployeeRepository repository;
@@ -36,9 +35,9 @@ public class EmployeeController {
 	
 	public EmployeeController(EmployeeRepository repository,
 			EmployeeResourceAssembler assembler) {
+		
 		this.repository = repository;
 		this.assembler = assembler;
-		
 	}
 	
 	// index page
@@ -51,7 +50,8 @@ public class EmployeeController {
 		
 		List<Resource<Employee>> employees = repository.findAll().stream()
 				.map(assembler::toResource) // references the toResource method
-				.collect(Collectors.toList());
+				.collect(Collectors.toList()); // Returns a 'Collector' that accumulates the input 
+											   // elements into a new 'List'.
 				
 		// 'map()' returns a stream with the result of applying the given function to the elements 
 		// in that stream. TODO: STUDY THIS
@@ -86,7 +86,7 @@ public class EmployeeController {
 	// single item
 	
 	@GetMapping("/employees/{id}")
-	public Resource<Employee> showSingleEmployee(@PathVariable Long id) {
+	public Resource<Employee> listOne(@PathVariable Long id) {
 		// The '@PathVariable' annotation indicates that a method parameter should be
 		// bound to a variable in the URI.
 		

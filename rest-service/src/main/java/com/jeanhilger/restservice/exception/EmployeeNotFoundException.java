@@ -1,4 +1,4 @@
-package com.jeanhilger.restservice;
+package com.jeanhilger.restservice.exception;
 
 public class EmployeeNotFoundException extends RuntimeException {
 	

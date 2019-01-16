@@ -23,6 +23,7 @@ public class Employee {
 	protected Employee() {} // This is necessary because of JPA
 	
 	public Employee(String firstName, String lastName, int age, String role) {
+		
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.age = age;

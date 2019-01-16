@@ -1,4 +1,4 @@
-package com.jeanhilger.restservice;
+package com.jeanhilger.restservice.assembler;
 
 import static org.springframework.hateoas.mvc.ControllerLinkBuilder.linkTo;
 import static org.springframework.hateoas.mvc.ControllerLinkBuilder.methodOn;
@@ -14,10 +14,11 @@ import com.jeanhilger.restservice.model.Employee;
 		   // Spring will autodetect this class for dependency injection.
 		   // @Service, @Repository, and @Controller are specializations of @Component.
 public class EmployeeResourceAssembler implements ResourceAssembler<Employee, Resource<Employee>> {
+	
 	@Override
 	public Resource<Employee> toResource(Employee employee) {
 		return new Resource<>(employee,
-				linkTo(methodOn(EmployeeController.class).showSingleEmployee(employee.getId())).withSelfRel(), // (A)
+				linkTo(methodOn(EmployeeController.class).listOne(employee.getId())).withSelfRel(), // (A)
 				linkTo(methodOn(EmployeeController.class).listAll()).withRel("employees")); // (B)
 	}
 	
