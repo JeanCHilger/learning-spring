@@ -18,5 +18,5 @@ role=${roles_array[r_sel]}
 diff=$((101-15)) # defines the range of the age
 age=$(($(($$%$diff))+15)) # random number from 15 to 100
 
-curl -v -X POST localhost:8080/employees -H 'Content-type:application/json' -d '{"firstName":"'$first_name'","lastName":"'$last_name'","role":"'$role'", "age":"'$age'"}'
+echo $(curl -v -X POST localhost:8080/employees -H 'Content-type:application/json' -d '{"firstName":"'$first_name'","lastName":"'$last_name'","role":"'$role'", "age":"'$age'"}')
 echo ""

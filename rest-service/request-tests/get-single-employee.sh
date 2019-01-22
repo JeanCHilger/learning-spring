@@ -1,4 +1,4 @@
-if [ -z "$1" ] 
+if [ -z "$1" ]
 then
     echo -e "\tGETTING EMPLOYEES WITH ID=1 AND ID=2"
     echo ""
