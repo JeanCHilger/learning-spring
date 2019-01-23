@@ -21,11 +21,14 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	protected void configure(HttpSecurity http) throws Exception {
 		// Overriding this method enable to configure the 'HttpSecurity'.
 		
-		// The 'HttpSecurity' allows configuring web based security for specific http requests. 
+		// The 'HttpSecurity' allows configuring web based security for specific http requests.
+		// The default behavior is to be applied to all requests, but can be restricted
+		// using 'requestMatcher'.
 		http
 			.authorizeRequests()
-				.antMatchers("/", "/home").permitAll()
-				.anyRequest().authenticated()
+				.antMatchers("/", "/home").permitAll() // Specifically, the "/" and "/home" paths are configured 
+													   // to not require any authentication. 
+				.anyRequest().authenticated() 		   // All other paths must be authenticated.
 				.and()
 			.formLogin()
 				.loginPage("/login")
@@ -38,6 +41,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	@Bean
 	@Override
 	public UserDetailsService userDetailsService() {
+		// sets up an in-memory user store with a single user
 		UserDetails user =
 				User.withDefaultPasswordEncoder()
 				.username("user")
